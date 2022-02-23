@@ -17,7 +17,7 @@
     </string-array>
         <string name="host_string">Target IP Address</string>
         <string name="udp_string">Target UDP Port</string>
-        <string name="author_string">
+        <string name="author_string" translatable="false">
             &#169; 2011&#8211;2015 by Tobias Schwirten &amp; Martin Kaltenbrunner,
             &#169; 2022 EmiyaSyahriel
         </string>
@@ -26,32 +26,30 @@ This application sends multitouch events via TUIO/UDP. You can change the target
 address and port number as well as the default screen orientation in the settings
 dialog. The TUIO verbosity can be increased for the use on unreliable networks. You
 will find further information about the TUIO protocol and framework at http://www.tuio.org\n
-\n
-A possible \&quot;Client does not respond\&quot; error message indicates that there is no
+\nA possible \&quot;Client does not respond\&quot; error message indicates that there is no
 response from the configured target IP address. In some cases this is related to the
 firewall settings on your client device, and will work properly in spite of the warning.\n
-\n
-The included Java TUIO implementation is based on the JavaOSC library by
+\nThe included Java TUIO implementation is based on the JavaOSC library by
 Chandrasekhar Ramakrishnan.
         </string>
-		<string name="url_string">http://www.tuio.org/</string>
+		<string name="url_string" translatable="false">http://www.tuio.org/</string>
     <string name="target_ip_address">Target IP Address</string>
-    <string name="target_ip_address_default">192.168.1.2</string>
-    <string name="target_udp_port_default">3333</string>
+    <string name="target_ip_address_default" translatable="false">192.168.1.2</string>
+    <string name="target_udp_port_default" translatable="false">3333</string>
     <string name="target_udp_port">Target UDP Port</string>
     <string name="show_debug_info">Show Debug Info</string>
     <string name="display_verbose_info">Verbose TUIO</string>
     <string name="save_settings">Save Settings</string>
     <string name="local_ip_placeholder_default">local IP: 127.0.0.1</string>
     <string name="local_ip_placeholder_format">local IP: %s</string>
-    <string name="no_network">no active network connection found!</string>
+    <string name="no_network">No active network connection found!</string>
     <string name="menu_help">Help</string>
     <string name="menu_exit">Exit</string>
     <string name="invalid_port">Invalid UDP port number!</string>
     <string name="invalid_ip_address">Invalid host name or IP address!</string>
     <string name="reval_invalid_address">invalid address</string>
     <string name="reval_invalid_port">invalid port</string>
-    <string name="err_client_refused">client does not respond (check firewall)</string>
+    <string name="err_client_refused">Client does not respond (check firewall)</string>
     <string name="fmt_tuio_src">TUIO source: %s</string>
     <string name="fmt_tuio_client_addr">TUIO/UDP client: %s:%d</string>
 

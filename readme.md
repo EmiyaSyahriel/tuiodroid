@@ -13,8 +13,7 @@ This is a fork of the original project [here](https://github.com/TobiasSchwirten
     - Shake the phone (Original)
     > It annoys me a lot since my phone rocks a lot when using the app and it keeps opening the settings
     - Volume Up / Down (or Both)
-    - Back Button
-      You always can swipe the app from recent to close the app or use the exit option on settings
+    - Back Button, You always can swipe the app from recent to close the app or use the exit option on settings
 - Make the app translatable
 
 ### Links

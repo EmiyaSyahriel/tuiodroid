@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">TUIOdroid</string>
+    <string name="orientation_prompt">Orientasi Skrin</string>
+    <string name="opensettings_prompt">Buka tetapan oleh</string>
+    <string name="host_string">Alamat IP Sasaran</string>
+    <string name="udp_string">Port UDP Sasaran</string>
+    <string name="target_ip_address">Alamat IP Sasaran</string>
+    <string name="target_udp_port">Port UDP Sasaran</string>
+    <string name="show_debug_info">Tunjukkan Maklumat Nyahpepijat</string>
+    <string name="display_verbose_info">TUIO Maklumat Lebih</string>
+    <string name="save_settings">Simpan Tetapan</string>
+    <string name="local_ip_placeholder_default">IP Tempatan : 127.0.0.1</string>
+    <string name="local_ip_placeholder_format">IP Tempatan : %s</string>
+    <string name="no_network">Tiada sambungan rangkaian aktif ditemui!</string>
+    <string name="menu_help">Bantuan</string>
+    <string name="menu_exit">Keluar</string>
+    <string name="invalid_port">Nombor port UDP tidak sah!</string>
+    <string name="invalid_ip_address">Nama hos atau alamat IP tidak sah!</string>
+    <string name="reval_invalid_address">Alamat tidak sah!</string>
+    <string name="reval_invalid_port">Port tidak sah!</string>
+    <string name="err_client_refused">Pelanggan tidak bertindak balas (semak firewall)</string>
+    <string name="fmt_tuio_src">Sumber TUIO: %s</string>
+    <string name="fmt_tuio_client_addr">Pelanggan TUIO/UDP: %s:%d</string>
+    <string-array name="opensettings_array">
+        <item>Goncangkan</item>
+        <item>Butang Balik</item>
+        <item>Btng Klantangn Naik</item>
+        <item>Btng Klantangn Turun</item>
+        <item>Btng Klantangn Naik + Turun</item>
+    </string-array>
+    <string-array name="orientation_array">
+        <item>Menurut Sistem</item>
+        <item>Tegak</item>
+        <item>Miring</item>
+    </string-array>
+    <string name="help_string">
+Aplikasi ini menghantarkan data multitouch melalu TUIO/UDP. Anda boleh menukar alamat dan nombor
+port sasaran serta orientasi skrin lalai dalam skrin tetapan. Verbositi TUIO boleh ditingkatkan
+untuk kegunaan pada rangkaian yang kurang kuat. Anda akan mendapatkan maklumat lanjut tentang
+protokol dan rangka kerja TUIO di http://www.tuio.org
+\n
+\nMesej \&quot;Pelanggan tidak bertindak balas\"&quot; menunjukkan bahawa tiada respons daripada
+sasaran pada alamat IP yang dikonfigurasikan. Dalam beberapa kes ini berkaitan dengan firewall
+pada salah satu peranti dan ada kalanya dia berfungsi dengan baik walaupun mesej ini dipaparkan.
+\n
+\nImplementasi Java TUIO yang disertakan adalah berdasarkan perpustakaan JavaOSC oleh
+Chandrasekhar Ramakrishnan.
+        </string>
+</resources>

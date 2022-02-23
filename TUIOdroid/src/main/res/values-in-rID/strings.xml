@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">TUIOdroid</string>
+    <string name="orientation_prompt">Orientasi Layar</string>
+    <string name="opensettings_prompt">Buka pengaturan dengan</string>
+    <string name="host_string">Alamat IP Tujuan</string>
+    <string name="udp_string">Port UDP Tujuan</string>
+    <string name="target_ip_address">Alamat IP Target</string>
+    <string name="target_udp_port">Port UDP Target</string>
+    <string name="show_debug_info">Tampilkan Info Awakutu</string>
+    <string name="display_verbose_info">TUIO Lebih Banyak Info</string>
+    <string name="save_settings">Simpan Pengaturan</string>
+    <string name="local_ip_placeholder_default">IP Lokal : 127.0.0.1</string>
+    <string name="local_ip_placeholder_format">IP Lokal : %s</string>
+    <string name="no_network">Tidak ada sambungan jaringan aktif yang ditemukan!</string>
+    <string name="menu_help">Bantuan</string>
+    <string name="menu_exit">Keluar</string>
+    <string name="invalid_port">Angka port UDP tidak sah!</string>
+    <string name="invalid_ip_address">Nama host atau alamat IP tidak sah!</string>
+    <string name="reval_invalid_address">Alamat tidak sah</string>
+    <string name="reval_invalid_port">Port tidak sah</string>
+    <string name="err_client_refused">Klien tidak merespon (Coba cek Firewall)</string>
+    <string name="fmt_tuio_src">Asal TUIO : %s</string>
+    <string name="fmt_tuio_client_addr">Klien TUIO/UDP: %s:%d</string>
+    <string-array name="opensettings_array">
+        <item>Goyangkan</item>
+        <item>Tombol Kembali</item>
+        <item>Volume Atas</item>
+        <item>Volume Bawah</item>
+        <item>Volume Atas + Bawah</item>
+    </string-array>
+    <string-array name="orientation_array">
+        <item>Menurut Sistem</item>
+        <item>Tegak</item>
+        <item>Miring</item>
+    </string-array>
+    <string name="help_string">
+Aplikasi ini mengirim data multi-sentuhan lewat protokol TUIO/UDP. Anda bisa mengganti alamat IP dan
+port tujuan juga orientasi layar di layar pengaturan. Informasi TUIO bisa dibuat lebih lugas
+jikalau jaringan kurang memadai. anda bisa mencari informasi lebih mengenai protokol TUIO dan
+framework-framework nya di http://www.tuio.org\n
+\nPesan \&quot;Klien tidak merespon\&quot; menandai bahwa perangkat yang IP-nya dijadikan tujuan tidak
+merespon. Pada beberapa kasus disebabkan oleh pengaturan firewall pada perangkat ini atau tujuan,
+dan kadang masih bisa bekerja meskipun pesan ini tampil.\n
+\nImplementasi TUIO Java yang dipakai dalam aplikasi ini didasarkan pada pustaka JavaOSC oleh
+Chandrasekhar Ramakrishnan.
+        </string>
+</resources>
