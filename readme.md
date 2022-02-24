@@ -1,4 +1,4 @@
-## TUIOdroid 
+# TUIOdroid 
 is an open source TUIO tracker for Android devices, which allows multi-touch remote 
 control based on the TUIO protocol. 
 
@@ -17,6 +17,7 @@ This is a fork of the original project [here](https://github.com/TobiasSchwirten
 - Make the app translatable
 
 ### Links
+- [Latest APK](https://github.com/EmiyaSyahriel/tuiodroid/releases/latest) | [All Released APK](https://https://github.com/EmiyaSyahriel/tuiodroid/releases)
 - [Original Project](https://github.com/TobiasSchwirten/tuiodroid)
 - [Official Market Link (now dead)](https://market.android.com/details?id=tuioDroid.impl)
 
@@ -24,4 +25,4 @@ This is a fork of the original project [here](https://github.com/TobiasSchwirten
 This application has been created by [Tobias Schwirten](https://github.com/TobiasSchwirten) and [Martin Kaltenbrunner](https://github.com/mkalten). The included Java TUIO implementation is based on the JavaOSC library by Chandrasekhar Ramakrishnan. Please note that the GPL demands the publication of the full source code of any derived work. If you are planning to develop a proprietary application based on this code, we may be able to provide an alternative commercial license option.
 
 ### License
-GNU GPL-3.0 , see [License](license.txt)
+GNU GPL-3.0, see [License](license.txt)
