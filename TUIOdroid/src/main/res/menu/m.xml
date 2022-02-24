@@ -3,7 +3,13 @@
   xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     >
-    <item android:title="@string/menu_save" android:id="@+id/save" app:showAsAction="ifRoom"/>
-    <item android:title="@string/menu_help" android:id="@+id/help" app:showAsAction="never"/>
-    <item android:title="@string/menu_exit" android:id="@+id/exit" app:showAsAction="never"/>
+    <item android:title="@string/menu_save" android:id="@+id/save" app:showAsAction="ifRoom"
+        android:contentDescription="@string/menu_save_desc"
+        />
+    <item android:title="@string/menu_help" android:id="@+id/help" app:showAsAction="never"
+        android:contentDescription="@string/menu_help_desc"
+        />
+    <item android:title="@string/menu_exit" android:id="@+id/exit" app:showAsAction="never"
+        android:contentDescription="@string/menu_exit_desc"
+        />
 </menu>

@@ -51,4 +51,7 @@ Chandrasekhar Ramakrishnan.
     <string name="title_settings">Tetapan</string>
     <string name="title_help">Bantuan</string>
     <string name="menu_save">Simpan</string>
+    <string name="menu_save_desc">Simpan perubahan dan kembali ke skrin TUIO.</string>
+    <string name="menu_help_desc">Menunjukkan skrin bantuan.</string>
+    <string name="menu_exit_desc">Keluar dari aplikasi.</string>
 </resources>
