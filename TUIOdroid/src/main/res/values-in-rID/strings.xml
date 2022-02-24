@@ -10,8 +10,7 @@
     <string name="show_debug_info">Tampilkan Info Awakutu</string>
     <string name="display_verbose_info">TUIO Lebih Banyak Info</string>
     <string name="save_settings">Simpan Pengaturan</string>
-    <string name="local_ip_placeholder_default">IP Lokal : 127.0.0.1</string>
-    <string name="local_ip_placeholder_format">IP Lokal : %s</string>
+    <string name="local_ip">IP Lokal</string>
     <string name="no_network">Tidak ada sambungan jaringan aktif yang ditemukan!</string>
     <string name="menu_help">Bantuan</string>
     <string name="menu_exit">Keluar</string>
@@ -45,4 +44,9 @@ dan kadang masih bisa bekerja meskipun pesan ini tampil.\n
 \nImplementasi TUIO Java yang dipakai dalam aplikasi ini didasarkan pada pustaka JavaOSC oleh
 Chandrasekhar Ramakrishnan.
         </string>
+    <string name="msg_discard_settings_title">Buang Perubahan?</string>
+    <string name="msg_discard_settings_content">Anda bisa memilih opsi Simpan di Menu untuk menyimpan pengaturan.</string>
+    <string name="title_settings">Pengaturan</string>
+    <string name="title_help">Bantuan</string>
+    <string name="menu_save">Simpan</string>
 </resources>

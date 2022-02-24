@@ -27,6 +27,8 @@ import java.util.Enumeration;
 
 import tuioDroid.impl.R;
 import android.app.Activity;
+import android.app.AlertDialog;
+import android.content.DialogInterface;
 import android.os.Bundle;
 import android.content.Intent;
 import android.graphics.Color;
@@ -43,13 +45,16 @@ import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.TextView;
 
+import androidx.appcompat.app.AppCompatActivity;
+
 /**
  * Activity that provides Settings for the user
  * @author Tobias Schwirten
  * @author Martin Kaltenbrunner
+ * @author Syahriel "EmiyaSyahriel" Ibnu
  */
 
-public class SettingsActivity extends Activity{
+public class SettingsActivity extends AppCompatActivity {
 	private boolean shouldKill = false;
 	/**
 	 *  Called when the activity is first created.
@@ -59,9 +64,6 @@ public class SettingsActivity extends Activity{
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.settingslayout);
 		shouldKill = false;
-
-		Button btn_OK = (Button)findViewById(R.id.saveButton);
-		btn_OK.setOnClickListener(listener_OkBtn);
 
 		//Button btn_KO = (Button)findViewById(R.id.cancelButton);
 		//btn_KO.setOnClickListener(listener_KoBtn);
@@ -98,7 +100,7 @@ public class SettingsActivity extends Activity{
 
 		TextView ipView = (TextView)findViewById(R.id.localIP);
 		String localIP = getLocalIpAddress();
-		if (localIP!=null) ipView.setText(getString(R.string.local_ip_placeholder_format, localIP));
+		if (localIP!=null) ipView.setText(localIP);
 		else {
 			ipView.setTextColor(Color.RED);
 			ipView.setText(R.string.no_network);
@@ -133,6 +135,30 @@ public class SettingsActivity extends Activity{
 		return true;
 	}
 
+	private final DialogInterface.OnClickListener listener_backPressConfirm = new DialogInterface.OnClickListener() {
+		@Override
+		public void onClick(DialogInterface dialog, int which) {
+			SettingsActivity.super.onBackPressed();
+		}
+	};
+	private final DialogInterface.OnClickListener listener_backPressCancel = new DialogInterface.OnClickListener() {
+		@Override
+		public void onClick(DialogInterface dialog, int which) {
+			dialog.cancel();
+		}
+	};
+
+	@Override
+	public void onBackPressed() {
+		AlertDialog.Builder b = new AlertDialog.Builder(this);
+		b.setTitle(R.string.msg_discard_settings_title)
+				.setMessage(R.string.msg_discard_settings_content)
+				.setPositiveButton(android.R.string.yes, listener_backPressConfirm)
+				.setNegativeButton(android.R.string.cancel, listener_backPressCancel)
+				.create()
+				.show();
+	}
+
 	/**
 	 * Called when the user selects an Item in the Menu
 	 */
@@ -145,6 +171,12 @@ public class SettingsActivity extends Activity{
 		}else if(id == R.id.exit){
 			shouldKill = true;
 			listener_OkBtn.onClick(null);
+			return true;
+		}else if(id == R.id.save){
+			this.listener_OkBtn.onClick(null);
+			return true;
+		}else if(id == android.R.id.home){
+			this.onBackPressed(); // Do the same work as Back Button
 			return true;
 		}else{
 			return super.onOptionsItemSelected(item);
@@ -200,17 +232,6 @@ public class SettingsActivity extends Activity{
 			finish();
 		}
 	};
-
-/**
- * Listener for the Cancel button
- */
-/*private OnClickListener listener_KoBtn = new OnClickListener(){
-
-	  public void onClick(View v){
-          finish();
-       }
-   };*/
-
 
 
 }

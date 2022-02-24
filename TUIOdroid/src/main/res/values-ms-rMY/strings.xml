@@ -10,8 +10,7 @@
     <string name="show_debug_info">Tunjukkan Maklumat Nyahpepijat</string>
     <string name="display_verbose_info">TUIO Maklumat Lebih</string>
     <string name="save_settings">Simpan Tetapan</string>
-    <string name="local_ip_placeholder_default">IP Tempatan : 127.0.0.1</string>
-    <string name="local_ip_placeholder_format">IP Tempatan : %s</string>
+    <string name="local_ip">IP Tempatan</string>
     <string name="no_network">Tiada sambungan rangkaian aktif ditemui!</string>
     <string name="menu_help">Bantuan</string>
     <string name="menu_exit">Keluar</string>
@@ -47,4 +46,9 @@ pada salah satu peranti dan ada kalanya dia berfungsi dengan baik walaupun mesej
 \nImplementasi Java TUIO yang disertakan adalah berdasarkan perpustakaan JavaOSC oleh
 Chandrasekhar Ramakrishnan.
         </string>
+    <string name="msg_discard_settings_content">Anda boleh pakai pilihan Simpan di Menu untuk menyimpan tetapan.</string>
+    <string name="msg_discard_settings_title">Buang Perubahan?</string>
+    <string name="title_settings">Tetapan</string>
+    <string name="title_help">Bantuan</string>
+    <string name="menu_save">Simpan</string>
 </resources>

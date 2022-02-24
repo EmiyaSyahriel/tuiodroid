@@ -40,8 +40,8 @@ Chandrasekhar Ramakrishnan.
     <string name="show_debug_info">Show Debug Info</string>
     <string name="display_verbose_info">Verbose TUIO</string>
     <string name="save_settings">Save Settings</string>
-    <string name="local_ip_placeholder_default">local IP: 127.0.0.1</string>
-    <string name="local_ip_placeholder_format">local IP: %s</string>
+    <string name="local_ip_placeholder_default" translatable="false">127.0.0.1</string>
+    <string name="local_ip">Local IP</string>
     <string name="no_network">No active network connection found!</string>
     <string name="menu_help">Help</string>
     <string name="menu_exit">Exit</string>
@@ -52,5 +52,10 @@ Chandrasekhar Ramakrishnan.
     <string name="err_client_refused">Client does not respond (check firewall)</string>
     <string name="fmt_tuio_src">TUIO source: %s</string>
     <string name="fmt_tuio_client_addr">TUIO/UDP client: %s:%d</string>
+    <string name="msg_discard_settings_title">Discard Changes?</string>
+    <string name="msg_discard_settings_content">You can select Save in the Menu to save your changes.</string>
+    <string name="title_settings">Settings</string>
+    <string name="title_help">Help</string>
+    <string name="menu_save">Save</string>
 
 </resources>

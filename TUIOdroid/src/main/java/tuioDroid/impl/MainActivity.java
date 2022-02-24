@@ -28,14 +28,18 @@ import android.os.Bundle;
 import android.view.*;
 import android.widget.Toast;
 import android.hardware.*;
+
+import androidx.appcompat.app.AppCompatActivity;
+
 import java.net.*;
 
 /**
  * Main Activity
  * @author Tobias Schwirten
  * @author Martin Kaltenbrunner
+ * @author Syahriel "EmiyaSyahriel" Ibnu
  */
-public class MainActivity extends Activity {
+public class MainActivity extends AppCompatActivity {
   
 	/**
 	 * View that shows the Touch points etc
@@ -136,68 +140,75 @@ public class MainActivity extends Activity {
      * Listens for results of new child activities. 
      * Different child activities are identified by their requestCode
      */
-    protected void onActivityResult(int requestCode, int resultCode, Intent data){
-       
-    	 // See which child activity is calling us back.
-    	if(requestCode == REQUEST_CODE_SETTINGS){
-        	
-        	switch (resultCode){
-        	
-        		case RESULT_OK:
-        			Bundle dataBundle = data.getExtras(); 
-        			isOneVolumeBtnPressed = false;
-        	    	String ip = dataBundle.getString(Consts.INTACT_O_IP_TARGET);
-        	    	
-        	    	try { InetAddress.getByName(ip); } 
-        	    	catch (Exception e) {
-        	    		Toast.makeText(this, getString(R.string.invalid_ip_address), Toast.LENGTH_LONG).show();
-        			}
-        	    	
-        	    	int port = 3333;
-        	    	try { port = Integer.parseInt(dataBundle.getString(Consts.INTACT_O_UDP_PORT)); }
-        	    	catch (Exception e) { port = 0; }
-        	    	if (port<1024) Toast.makeText(this, getString(R.string.invalid_port), Toast.LENGTH_LONG).show();
-        	    		
-        	    	this.oscIP = ip;
-            	    this.oscPort = port;        	
-            	    this.drawAdditionalInfo = dataBundle.getBoolean(Consts.OPTK_EXTRA_INFO);
-            	    this.sendPeriodicUpdates = dataBundle.getBoolean(Consts.OPTK_VERBOSE);
-            	    	
-            	    this.touchView.setNewOSCConnection(oscIP, oscPort);
-            	    this.touchView.drawAdditionalInfo = this.drawAdditionalInfo;
-            	    this.touchView.sendPeriodicUpdates = this.sendPeriodicUpdates;
-            	    	
-            	    /* Change behavior of screen rotation */
-            	    this.screenOrientation  = dataBundle.getInt(Consts.OPTK_SCREEN_ORIENTATION);
-            	    this.adjustScreenOrientation(this.screenOrientation);
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
 
-            	    this.openSettingsMethod = dataBundle.getInt(Consts.OPTK_SETTING_METHOD);
+		// See which child activity is calling us back.
+		if (requestCode == REQUEST_CODE_SETTINGS) {
 
-        	    	/* Get preferences, edit and commit */
-            	    SharedPreferences settings = this.getPreferences(MODE_PRIVATE);
-            	    SharedPreferences.Editor editor = settings.edit();
-            	    
-            	    /* define Key/Value */
-            	    editor.putString(Consts.OPTK_IP_TARGET, this.oscIP);
-            	    editor.putInt(Consts.OPTK_UDP_PORT, this.oscPort);
-            	    editor.putBoolean(Consts.OPTK_EXTRA_INFO,this.drawAdditionalInfo);
-            	    editor.putBoolean(Consts.OPTK_VERBOSE,this.sendPeriodicUpdates);
-            	    editor.putInt(Consts.OPTK_SCREEN_ORIENTATION,this.screenOrientation);
-            	    editor.putInt(Consts.OPTK_SETTING_METHOD,this.openSettingsMethod);
+			switch (resultCode) {
 
-            	    /* save Settings*/
-            	    editor.apply();
+				case RESULT_OK:
+					Bundle dataBundle = data.getExtras();
+					isOneVolumeBtnPressed = false;
+					String ip = dataBundle.getString(Consts.INTACT_O_IP_TARGET);
 
-            	    if(dataBundle.getBoolean(Consts.INTACT_O_SHOULD_EXIT, false))
-            	    	finish();
+					try {
+						InetAddress.getByName(ip);
+					} catch (Exception e) {
+						Toast.makeText(this, getString(R.string.invalid_ip_address), Toast.LENGTH_LONG).show();
+					}
 
-        	    	break;
-        	    default:
-        	    	// Do nothing
-        		
-        	}
-    	}
-    }
+					int port = 3333;
+					try {
+						port = Integer.parseInt(dataBundle.getString(Consts.INTACT_O_UDP_PORT));
+					} catch (Exception e) {
+						port = 0;
+					}
+					if (port < 1024)
+						Toast.makeText(this, getString(R.string.invalid_port), Toast.LENGTH_LONG).show();
+
+					this.oscIP = ip;
+					this.oscPort = port;
+					this.drawAdditionalInfo = dataBundle.getBoolean(Consts.OPTK_EXTRA_INFO);
+					this.sendPeriodicUpdates = dataBundle.getBoolean(Consts.OPTK_VERBOSE);
+
+					this.touchView.setNewOSCConnection(oscIP, oscPort);
+					this.touchView.drawAdditionalInfo = this.drawAdditionalInfo;
+					this.touchView.sendPeriodicUpdates = this.sendPeriodicUpdates;
+
+					/* Change behavior of screen rotation */
+					this.screenOrientation = dataBundle.getInt(Consts.OPTK_SCREEN_ORIENTATION);
+					this.adjustScreenOrientation(this.screenOrientation);
+
+					this.openSettingsMethod = dataBundle.getInt(Consts.OPTK_SETTING_METHOD);
+
+					/* Get preferences, edit and commit */
+					SharedPreferences settings = this.getPreferences(MODE_PRIVATE);
+					SharedPreferences.Editor editor = settings.edit();
+
+					/* define Key/Value */
+					editor.putString(Consts.OPTK_IP_TARGET, this.oscIP);
+					editor.putInt(Consts.OPTK_UDP_PORT, this.oscPort);
+					editor.putBoolean(Consts.OPTK_EXTRA_INFO, this.drawAdditionalInfo);
+					editor.putBoolean(Consts.OPTK_VERBOSE, this.sendPeriodicUpdates);
+					editor.putInt(Consts.OPTK_SCREEN_ORIENTATION, this.screenOrientation);
+					editor.putInt(Consts.OPTK_SETTING_METHOD, this.openSettingsMethod);
+
+					/* save Settings*/
+					editor.apply();
+
+					if (dataBundle.getBoolean(Consts.INTACT_O_SHOULD_EXIT, false))
+						finish();
+
+					break;
+				default:
+					super.onActivityResult(requestCode, resultCode, data);
+
+			}
+		}else{
+			super.onActivityResult(requestCode, resultCode, data);
+		}
+	}
 
     /**
      * Adjusts the screen orientation

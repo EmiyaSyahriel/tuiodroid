@@ -27,14 +27,18 @@ import android.view.View.OnClickListener;
 import android.widget.Button;
 import android.widget.TextView;
 import android.text.util.Linkify;
+
+import androidx.appcompat.app.AppCompatActivity;
+
 import java.util.regex.Pattern;
 
 /**
  * Activity that provides a help screen for the user
  * @author Tobias Schwirten
  * @author Martin Kaltenbrunner
+ * @author Syahriel "EmiyaSyahriel" Ibnu
  */
-public class HelpActivity extends Activity{
+public class HelpActivity extends AppCompatActivity {
 	
 	/**
 	 *  Called when the activity is first created. 
@@ -53,18 +57,6 @@ public class HelpActivity extends Activity{
 	        TextView textView_Link = (TextView)findViewById(R.id.textHelp);
 	        Pattern pattern = Pattern.compile("TUIO.org");
 	        Linkify.addLinks(textView_Link, pattern, "http://");
-	        
-	        Button btn_OK = (Button)findViewById(R.id.okButton);
-	        btn_OK.setOnClickListener(listener_OkBtn);
+
 	    }
-	 
-	 /**
-	  * Listener for the OK button
-	  */
-	 private OnClickListener listener_OkBtn = new OnClickListener(){
-	        
-		  public void onClick(View v){                        	           
-	           finish();
-	        }
-	    };
 }

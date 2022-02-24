@@ -5,21 +5,38 @@
 
     <uses-permission android:name="android.permission.INTERNET" />
 
-    <application android:icon="@drawable/icon" android:label="@string/app_name">
+    <application android:icon="@drawable/icon" android:label="@string/app_name"
+        android:theme="@style/Theme.AppCompat.DayNight"
+        >
 
         <activity android:name=".MainActivity"
             android:exported="true"
             android:launchMode="singleInstance"
             android:label="@string/app_name"
-            android:theme="@android:style/Theme.NoTitleBar.Fullscreen" android:icon="@drawable/icon">
+            android:theme="@style/Theme.AppCompat.DayNight.NoActionBar" android:icon="@drawable/icon">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
 
-        <activity android:launchMode="singleInstance" android:name="tuioDroid.impl.SettingsActivity"/>
-        <activity android:launchMode="singleInstance" android:name="tuioDroid.impl.HelpActivity"/>
+        <activity
+            android:launchMode="singleInstance" android:name="tuioDroid.impl.SettingsActivity"
+            android:label="@string/app_name"
+            >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".MainActivity"
+                />
+        </activity>
+        <activity android:launchMode="singleInstance" android:name="tuioDroid.impl.HelpActivity"
+            android:label="@string/title_help"
+            >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".SettingsActivity"
+                />
+        </activity>
 
     </application>
 
