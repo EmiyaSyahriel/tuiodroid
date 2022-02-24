@@ -10,16 +10,19 @@ android {
         applicationId = "tuioDroid.impl"
         minSdk = 14
         targetSdk = 31
-        versionCode = 1
-        versionName = "1.0"
+        versionCode = 6
+        versionName = "1.2_emsy"
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
     }
 
     buildTypes {
         getByName("release") {
-            isMinifyEnabled = false
+            isMinifyEnabled = true
             proguardFiles(getDefaultProguardFile("proguard-android-optimize.txt"), "proguard-rules.pro")
+        }
+        getByName("debug") {
+            isMinifyEnabled = false
         }
     }
     kotlinOptions {
