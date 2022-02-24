@@ -11,7 +11,7 @@ android {
         minSdk = 14
         targetSdk = 31
         versionCode = 6
-        versionName = "1.2_emsy"
+        versionName = "1.2.0-emsy"
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
     }
