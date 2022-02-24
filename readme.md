@@ -17,7 +17,7 @@ This is a fork of the original project [here](https://github.com/TobiasSchwirten
 - Make the app translatable
 
 ### Links
-- [Latest APK](https://github.com/EmiyaSyahriel/tuiodroid/releases/latest) | [All Released APK](https://https://github.com/EmiyaSyahriel/tuiodroid/releases)
+- [Latest APK](https://github.com/EmiyaSyahriel/tuiodroid/releases/latest) | [All Released APK](https://github.com/EmiyaSyahriel/tuiodroid/releases)
 - [Original Project](https://github.com/TobiasSchwirten/tuiodroid)
 - [Official Market Link (now dead)](https://market.android.com/details?id=tuioDroid.impl)
 
