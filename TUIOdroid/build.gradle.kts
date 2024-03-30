@@ -4,14 +4,15 @@ plugins {
 }
 
 android {
-    compileSdk = 31
+    compileSdk = 34
+    namespace = "tuioDroid.impl"
 
     defaultConfig {
         applicationId = "tuioDroid.impl"
         minSdk = 14
-        targetSdk = 31
+        targetSdk = 34
         versionCode = 6
-        versionName = "1.2.0-emsy"
+        versionName = "1.2.1-emsy"
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
     }
@@ -31,11 +32,11 @@ android {
 
     packagingOptions{
         resources.excludes.add("META-INF/*.kotlin_module")
+        resources.excludes.add("kotlin/*.*")
     }
 }
 
 dependencies {
-    implementation("androidx.core:core-ktx:1.7.0")
     implementation("androidx.appcompat:appcompat:1.4.1")
     implementation("com.google.android.material:material:1.5.0")
     implementation(fileTree(mapOf("dir" to "libs", "include" to listOf("*.jar") )))
