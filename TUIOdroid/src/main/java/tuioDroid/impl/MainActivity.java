@@ -232,7 +232,7 @@ public class MainActivity extends AppCompatActivity {
     
     protected void onResume() {
       super.onResume();
-      sensorManager.registerListener(shakeListener, sensorManager.getDefaultSensor(Sensor.TYPE_ACCELEROMETER), SensorManager.SENSOR_DELAY_FASTEST);
+      sensorManager.registerListener(shakeListener, sensorManager.getDefaultSensor(Sensor.TYPE_ACCELEROMETER), SensorManager.SENSOR_DELAY_GAME);
       showSettings = false;
     }
 
